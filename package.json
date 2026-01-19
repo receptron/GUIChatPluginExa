@@ -3,21 +3,21 @@
   "version": "0.1.0",
   "type": "module",
   "description": "Exa web search plugin for GUI Chat applications",
-  "author": "snakajima",
+  "author": "receptron",
   "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.cjs"
     },
     "./vue": {
+      "types": "./dist/vue/index.d.ts",
       "import": "./dist/vue.js",
-      "require": "./dist/vue.cjs",
-      "types": "./dist/vue/index.d.ts"
+      "require": "./dist/vue.cjs"
     },
     "./style.css": "./dist/style.css"
   },

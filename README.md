@@ -1,5 +1,7 @@
 # @gui-chat-plugin/exa
 
+[![npm version](https://badge.fury.io/js/%40gui-chat-plugin%2Fexa.svg)](https://www.npmjs.com/package/@gui-chat-plugin/exa)
+
 Exa web search plugin for GUI Chat applications. Search the web using Exa API for high-quality, relevant results.
 
 ## Features
@@ -96,6 +98,14 @@ yarn build
 # Lint
 yarn lint
 ```
+
+## Test Prompts
+
+Try these prompts to test the plugin:
+
+1. "Search for the latest developments in quantum computing"
+2. "Find articles about TypeScript best practices in 2025"
+3. "Search for tutorials on building Vue.js applications"
 
 ## License
 
