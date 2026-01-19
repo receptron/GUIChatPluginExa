@@ -31,6 +31,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
+    "exa-js": "^2.0.12",
     "gui-chat-protocol": "^0.0.1"
   },
   "devDependencies": {
