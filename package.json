@@ -1,6 +1,6 @@
 {
   "name": "@gui-chat-plugin/exa",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Exa web search plugin for GUI Chat applications",
   "author": "receptron",
