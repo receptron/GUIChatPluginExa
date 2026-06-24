@@ -1,6 +1,6 @@
 {
   "name": "@gui-chat-plugin/exa",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "type": "module",
   "description": "Exa web search plugin for GUI Chat applications",
   "author": "receptron",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "exa-js": "^2.0.12",
-    "gui-chat-protocol": "^0.3.3"
+    "gui-chat-protocol": "^0.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
