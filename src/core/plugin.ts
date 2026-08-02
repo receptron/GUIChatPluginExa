@@ -2,13 +2,16 @@ import type { ToolContext, ToolPluginCore } from "gui-chat-protocol";
 import type { ExaArgs, ExaResult } from "./types";
 import { TOOL_NAME, TOOL_DEFINITION } from "./definition";
 
+// context is nullable on purpose: hosts that run the plugin without client-side
+// state (MulmoClaude's server bridge) pass an empty or missing context, and
+// reading through it unguarded threw a TypeError instead of returning a result.
 export const searchExa = async (
-  context: ToolContext,
+  context: ToolContext | null | undefined,
   args: ExaArgs,
 ): Promise<ExaResult> => {
   const { query } = args;
 
-  if (!context.app?.searchExa) {
+  if (!context?.app?.searchExa) {
     return {
       message: "searchExa function not available",
       instructions:
