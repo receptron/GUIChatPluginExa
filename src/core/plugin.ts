@@ -1,5 +1,6 @@
 import type { ToolContext, ToolPluginCore } from "gui-chat-protocol";
 import type { ExaArgs, ExaResult } from "./types";
+import { isExaSearchResponse } from "./hostResponse";
 import { TOOL_NAME, TOOL_DEFINITION } from "./definition";
 
 // context is nullable on purpose: hosts that run the plugin without client-side
@@ -21,6 +22,14 @@ export const searchExa = async (
 
   try {
     const data = await context.app.searchExa(args);
+
+    if (!isExaSearchResponse(data)) {
+      return {
+        message: "searchExa returned an unrecognized response",
+        instructions:
+          "Acknowledge that the search failed due to a technical error.",
+      };
+    }
 
     if (data.success && data.results) {
       return {
