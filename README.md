@@ -1,6 +1,7 @@
 # @gui-chat-plugin/exa
 
 [![npm version](https://badge.fury.io/js/%40gui-chat-plugin%2Fexa.svg)](https://www.npmjs.com/package/@gui-chat-plugin/exa)
+[![scoria](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/receptron/GUIChatPluginExa/badges/scoria.json)](https://github.com/receptron/GUIChatPluginExa/actions/workflows/scoria.yml)
 
 Exa web search plugin for GUI Chat applications. Search the web using Exa API for high-quality, relevant results.
 
