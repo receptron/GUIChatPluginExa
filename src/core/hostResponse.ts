@@ -6,18 +6,14 @@ export interface ExaSearchResponse {
   error?: string;
 }
 
-const isRecord = (value: unknown): value is Record<string, unknown> =>
-  typeof value === "object" && value !== null;
+const isRecord = (value: unknown): value is Record<string, unknown> => typeof value === "object" && value !== null;
 
-const isOptionalString = (value: unknown): value is string | undefined =>
-  value === undefined || typeof value === "string";
+const isOptionalString = (value: unknown): value is string | undefined => value === undefined || typeof value === "string";
 
-const isOptionalNumber = (value: unknown): value is number | undefined =>
-  value === undefined || typeof value === "number";
+const isOptionalNumber = (value: unknown): value is number | undefined => value === undefined || typeof value === "number";
 
 const isOptionalStringArray = (value: unknown): value is string[] | undefined =>
-  value === undefined ||
-  (Array.isArray(value) && value.every((item) => typeof item === "string"));
+  value === undefined || (Array.isArray(value) && value.every((item) => typeof item === "string"));
 
 const isExaSearchResult = (value: unknown): value is ExaSearchResult =>
   isRecord(value) &&
@@ -29,11 +25,8 @@ const isExaSearchResult = (value: unknown): value is ExaSearchResult =>
   isOptionalString(value.author) &&
   isOptionalNumber(value.score);
 
-export const isExaSearchResponse = (
-  value: unknown,
-): value is ExaSearchResponse =>
+export const isExaSearchResponse = (value: unknown): value is ExaSearchResponse =>
   isRecord(value) &&
   typeof value.success === "boolean" &&
   isOptionalString(value.error) &&
-  (value.results === undefined ||
-    (Array.isArray(value.results) && value.results.every(isExaSearchResult)));
+  (value.results === undefined || (Array.isArray(value.results) && value.results.every(isExaSearchResult)));

@@ -3,10 +3,7 @@
     <div class="max-w-4xl mx-auto">
       <h2 class="text-2xl font-bold text-gray-800 mb-6">
         Search Results
-        <span
-          v-if="selectedResult.jsonData && selectedResult.jsonData.query"
-          class="text-lg font-normal text-gray-600"
-        >
+        <span v-if="selectedResult.jsonData && selectedResult.jsonData.query" class="text-lg font-normal text-gray-600">
           for "{{ selectedResult.jsonData.query }}"
         </span>
       </h2>
@@ -30,18 +27,10 @@
               <div v-if="result.highlights && result.highlights.length" class="mt-3">
                 <p class="text-sm font-medium text-gray-600 mb-1">Key highlights:</p>
                 <div class="space-y-1">
-                  <p
-                    v-for="(highlight, hIndex) in result.highlights.slice(0, 3)"
-                    :key="hIndex"
-                    class="text-sm text-gray-600 italic"
-                  >
-                    "{{ highlight }}"
-                  </p>
+                  <p v-for="(highlight, hIndex) in result.highlights.slice(0, 3)" :key="hIndex" class="text-sm text-gray-600 italic">"{{ highlight }}"</p>
                 </div>
               </div>
-              <p v-if="result.publishedDate" class="text-xs text-gray-400 mt-2">
-                Published: {{ new Date(result.publishedDate).toLocaleDateString() }}
-              </p>
+              <p v-if="result.publishedDate" class="text-xs text-gray-400 mt-2">Published: {{ new Date(result.publishedDate).toLocaleDateString() }}</p>
             </div>
           </div>
         </div>

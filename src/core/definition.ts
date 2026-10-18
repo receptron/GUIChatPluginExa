@@ -3,8 +3,7 @@ export const TOOL_NAME = "searchWeb";
 export const TOOL_DEFINITION = {
   type: "function" as const,
   name: TOOL_NAME,
-  description:
-    "Search the web using Exa API for high-quality, relevant results",
+  description: "Search the web using Exa API for high-quality, relevant results",
   parameters: {
     type: "object" as const,
     properties: {
@@ -20,13 +19,11 @@ export const TOOL_DEFINITION = {
       },
       includeText: {
         type: "boolean",
-        description:
-          "Whether to include page text content in results (default: true)",
+        description: "Whether to include page text content in results (default: true)",
       },
       fetchHighlights: {
         type: "boolean",
-        description:
-          "Whether to include query-relevant highlights from the content",
+        description: "Whether to include query-relevant highlights from the content",
       },
       includeDomains: {
         type: "array",
@@ -40,13 +37,11 @@ export const TOOL_DEFINITION = {
       },
       startPublishedDate: {
         type: "string",
-        description:
-          "Only include results published after this date (ISO format: 2025-01-01)",
+        description: "Only include results published after this date (ISO format: 2025-01-01)",
       },
       endPublishedDate: {
         type: "string",
-        description:
-          "Only include results published before this date (ISO format: 2025-01-01)",
+        description: "Only include results published before this date (ISO format: 2025-01-01)",
       },
     },
     required: ["query"],

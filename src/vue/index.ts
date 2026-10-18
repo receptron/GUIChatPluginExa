@@ -16,12 +16,7 @@ export const plugin: ToolPlugin<never, ExaJsonData, ExaArgs> = {
 
 export type { ExaSearchResult, ExaJsonData, ExaArgs, ExaResult } from "../core/types";
 
-export {
-  TOOL_NAME,
-  TOOL_DEFINITION,
-  executeExa,
-  pluginCore,
-} from "../core/plugin";
+export { TOOL_NAME, TOOL_DEFINITION, executeExa, pluginCore } from "../core/plugin";
 
 export { samples } from "../core/samples";
 
