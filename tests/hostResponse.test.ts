@@ -31,10 +31,7 @@ describe("isExaSearchResponse", () => {
   });
 
   test("rejects a result missing the fields the view renders", () => {
-    assert.equal(
-      isExaSearchResponse({ success: true, results: [{ title: "Example" }] }),
-      false,
-    );
+    assert.equal(isExaSearchResponse({ success: true, results: [{ title: "Example" }] }), false);
   });
 
   test("rejects a result whose highlights are not all strings", () => {
@@ -49,11 +46,7 @@ describe("isExaSearchResponse", () => {
 
   test("rejects values that are not a response object", () => {
     [null, undefined, "ok", 7].forEach((value) => {
-      assert.equal(
-        isExaSearchResponse(value),
-        false,
-        `should reject ${JSON.stringify(value)}`,
-      );
+      assert.equal(isExaSearchResponse(value), false, `should reject ${JSON.stringify(value)}`);
     });
   });
 });

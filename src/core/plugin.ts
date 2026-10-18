@@ -10,17 +10,13 @@ export const SEARCH_DONE_INSTRUCTIONS =
 // context is nullable on purpose: hosts that run the plugin without client-side
 // state (MulmoClaude's server bridge) pass an empty or missing context, and
 // reading through it unguarded threw a TypeError instead of returning a result.
-export const searchExa = async (
-  context: ToolContext | null | undefined,
-  args: ExaArgs,
-): Promise<ExaResult> => {
+export const searchExa = async (context: ToolContext | null | undefined, args: ExaArgs): Promise<ExaResult> => {
   const { query } = args;
 
   if (!context?.app?.searchExa) {
     return {
       message: "searchExa function not available",
-      instructions:
-        "Acknowledge that the search failed due to a technical error.",
+      instructions: "Acknowledge that the search failed due to a technical error.",
     };
   }
 
@@ -30,8 +26,7 @@ export const searchExa = async (
     if (!isExaSearchResponse(data)) {
       return {
         message: "searchExa returned an unrecognized response",
-        instructions:
-          "Acknowledge that the search failed due to a technical error.",
+        instructions: "Acknowledge that the search failed due to a technical error.",
       };
     }
 
@@ -50,15 +45,13 @@ export const searchExa = async (
     } else {
       return {
         message: data.error || "Exa search failed",
-        instructions:
-          "Acknowledge that the search failed and suggest trying a different query.",
+        instructions: "Acknowledge that the search failed and suggest trying a different query.",
       };
     }
   } catch (error) {
     return {
       message: `Exa search failed: ${error instanceof Error ? error.message : "Unknown error"}`,
-      instructions:
-        "Acknowledge that the search failed due to a technical error.",
+      instructions: "Acknowledge that the search failed due to a technical error.",
     };
   }
 };
