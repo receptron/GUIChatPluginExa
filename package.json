@@ -1,6 +1,6 @@
 {
   "name": "@gui-chat-plugin/exa",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "type": "module",
   "description": "Exa web search plugin for GUI Chat applications",
   "author": "receptron",
@@ -34,9 +34,6 @@
     "test:coverage": "c8 yarn run test",
     "format": "prettier --write \"{src,demo,tests}/**/*.{ts,tsx,vue,json,css}\" \"*.{ts,js,json}\"",
     "format:check": "prettier --check \"{src,demo,tests}/**/*.{ts,tsx,vue,json,css}\" \"*.{ts,js,json}\""
-  },
-  "dependencies": {
-    "exa-js": "^2.25.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
